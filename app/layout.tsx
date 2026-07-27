@@ -17,26 +17,20 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
 
-  metadataBase: new URL(
-    "https://adbazaar-website.vercel.app"
-  ),
-
-
   title:
-    "Ad Bazaar Kanpur | Digital Printing & Branding Solutions",
+    "Ad Bazaar Kanpur | Digital Printing, Flex Printing & Branding Solutions",
 
 
   description:
-    "Ad Bazaar Kanpur offers Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Visiting Cards, Wedding Cards and complete advertising solutions in Kanpur.",
+    "Ad Bazaar Kanpur provides Digital Printing, Flex Printing, ACP Sign Board, Glow Sign Board, Visiting Cards, Wedding Cards and complete advertising solutions.",
 
 
   keywords: [
 
-    "Ad Bazaar",
     "Ad Bazaar Kanpur",
     "Digital Printing Kanpur",
     "Flex Printing Kanpur",
-    "ACP Board Printing Kanpur",
+    "ACP Sign Board Kanpur",
     "Glow Sign Board Kanpur",
     "LED Sign Board Kanpur",
     "Visiting Card Printing Kanpur",
@@ -54,7 +48,12 @@ export const metadata: Metadata = {
   ],
 
 
-  creator: "Ad Bazaar",
+  verification: {
+
+    google:
+      "v6Nr_6dRvadba76jCyANJhWPYTpC-vzBtnQsPNEDL2E",
+
+  },
 
 
   openGraph: {
@@ -64,19 +63,14 @@ export const metadata: Metadata = {
 
 
     description:
-      "Professional Digital Printing and Branding Solutions in Kanpur.",
+      "Professional printing and branding solutions in Kanpur.",
 
 
-    type:
-      "website",
+    type: "website",
 
 
     siteName:
-      "Ad Bazaar Kanpur",
-
-
-    locale:
-      "en_IN",
+      "Ad Bazaar"
 
   },
 
@@ -84,19 +78,12 @@ export const metadata: Metadata = {
   robots: {
 
     index: true,
-    follow: true,
+    follow: true
 
   },
 
-
-  icons: {
-
-    icon: "/favicon.ico",
-
-  },
 
 };
-
 
 
 export default function RootLayout({
@@ -114,7 +101,6 @@ export default function RootLayout({
 
     <html lang="en-IN">
 
-
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -122,7 +108,6 @@ export default function RootLayout({
         {children}
 
       </body>
-
 
     </html>
 
