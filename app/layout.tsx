@@ -15,24 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 
-
 export const metadata: Metadata = {
 
+  metadataBase: new URL(
+    "https://adbazaar-website.vercel.app"
+  ),
+
+
   title:
-    "Ad Bazaar Kanpur | Digital Printing, Flex Printing & Branding Solutions",
+    "Ad Bazaar Kanpur | Digital Printing & Branding Solutions",
 
 
   description:
-    "Ad Bazaar Kanpur provides Digital Printing, Flex Printing, ACP Sign Board, Glow Sign Board, Visiting Cards, Wedding Cards and complete advertising solutions.",
-
+    "Ad Bazaar Kanpur offers Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Visiting Cards, Wedding Cards and complete advertising solutions in Kanpur.",
 
 
   keywords: [
 
+    "Ad Bazaar",
     "Ad Bazaar Kanpur",
     "Digital Printing Kanpur",
     "Flex Printing Kanpur",
-    "ACP Sign Board Kanpur",
+    "ACP Board Printing Kanpur",
     "Glow Sign Board Kanpur",
     "LED Sign Board Kanpur",
     "Visiting Card Printing Kanpur",
@@ -43,13 +47,14 @@ export const metadata: Metadata = {
   ],
 
 
-
   authors: [
     {
       name: "Ad Bazaar Kanpur"
     }
   ],
 
+
+  creator: "Ad Bazaar",
 
 
   openGraph: {
@@ -59,26 +64,36 @@ export const metadata: Metadata = {
 
 
     description:
-      "Professional printing and branding solutions in Kanpur.",
+      "Professional Digital Printing and Branding Solutions in Kanpur.",
 
 
-    type: "website",
+    type:
+      "website",
 
 
     siteName:
-      "Ad Bazaar"
+      "Ad Bazaar Kanpur",
+
+
+    locale:
+      "en_IN",
 
   },
-
 
 
   robots: {
 
     index: true,
-    follow: true
+    follow: true,
 
   },
 
+
+  icons: {
+
+    icon: "/favicon.ico",
+
+  },
 
 };
 
@@ -97,7 +112,7 @@ export default function RootLayout({
 
   return (
 
-    <html lang="en">
+    <html lang="en-IN">
 
 
       <body
