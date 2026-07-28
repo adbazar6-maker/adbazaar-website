@@ -1,145 +1,162 @@
+"use client";
+
+import { motion } from "framer-motion";
+import CountUp from "react-countup";
+import {
+  FaArrowRight,
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaStar,
+  FaMapMarkerAlt,
+  FaCheckCircle,
+} from "react-icons/fa";
+import HeroSlider from "./HeroSlider";
+
 export default function Hero() {
-
   return (
+    <section className="relative min-h-screen bg-[#080808] overflow-hidden flex items-center">
 
-    <section className="bg-gradient-to-r from-black via-gray-900 to-black text-white py-24 px-6">
+      {/* Background Glow */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-20 -left-20 w-96 h-96 rounded-full bg-yellow-500/10 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] rounded-full bg-yellow-400/5 blur-[160px]" />
+      </div>
 
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
 
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        {/* LEFT */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: .8 }}
+        >
 
+          <span className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-yellow-400 text-sm font-semibold">
+            <FaStar />
+            Premium Printing Solutions
+          </span>
 
-        <div>
-
-
-          <h1 className="text-5xl md:text-6xl font-extrabold leading-tight">
-
-            Complete Printing
-
-            <span className="text-yellow-400">
-              {" "}Solution
-            </span>
-
-            <br />
-
-            For Your Business
-
+          <h1 className="mt-8 text-5xl md:text-7xl font-black leading-tight text-white">
+            Ad <span className="text-yellow-400">Bazaar</span>
           </h1>
 
+          <h2 className="mt-5 text-2xl md:text-3xl font-semibold text-gray-200">
+            Your Complete Printing & Branding Partner
+          </h2>
 
-
-          <p className="text-2xl mt-6 text-yellow-400 font-bold">
-            Ad Bazaar Kanpur
+          <p className="mt-6 text-gray-400 text-lg leading-8 max-w-xl">
+            Digital Printing, Flex Printing, ACP Sign Boards,
+            Glow Sign, Wallpaper, Wedding Cards,
+            Indoor & Outdoor Branding and much more.
           </p>
 
+          {/* Trust Points */}
 
+          <div className="mt-8 grid grid-cols-2 gap-3">
 
-          <p className="text-gray-300 mt-5 text-lg leading-relaxed">
+            {[
+              "Premium Quality",
+              "Fast Delivery",
+              "Modern Machines",
+              "Affordable Pricing",
+            ].map((item) => (
+              <div
+                key={item}
+                className="flex items-center gap-3 text-gray-300"
+              >
+                <FaCheckCircle className="text-yellow-400" />
+                {item}
+              </div>
+            ))}
 
-            Professional Digital Printing, Flex Printing,
-            ACP Sign Board, Glow Sign Board, Branding
-            and Complete Advertising Solutions under one roof.
+          </div>
 
-          </p>
+          {/* Buttons */}
 
-
-
-          <div className="flex flex-wrap gap-4 mt-8">
-
+          <div className="flex flex-wrap gap-4 mt-10">
 
             <a
-              href="tel:9026283091"
-              className="bg-yellow-400 text-black px-7 py-3 rounded-full font-bold hover:scale-105 transition"
+              href="tel:+919026283091"
+              className="btn-primary flex items-center gap-2"
             >
+              <FaPhoneAlt />
               Call Now
             </a>
-
-
 
             <a
               href="https://wa.me/919026283091"
               target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-500 text-white px-7 py-3 rounded-full font-bold hover:scale-105 transition"
+              className="btn-secondary flex items-center gap-2"
             >
+              <FaWhatsapp />
               WhatsApp
             </a>
 
+            <a
+              href="#contact"
+              className="text-yellow-400 flex items-center gap-2 font-bold"
+            >
+              Get Free Quote
+              <FaArrowRight />
+            </a>
 
           </div>
 
+          {/* Counters */}
 
+          <div className="grid grid-cols-3 gap-6 mt-14">
 
-          <div className="flex gap-6 mt-10">
-
-
-            <div className="border border-yellow-400 rounded-xl px-5 py-3 text-center">
-
-              <h3 className="text-2xl font-bold text-yellow-400">
-                2018+
+            <div>
+              <h3 className="text-4xl font-black text-yellow-400">
+                <CountUp end={5000} duration={3} />+
               </h3>
-
-              <p className="text-sm text-gray-300">
-                Experience
+              <p className="text-gray-400 mt-2">
+                Projects
               </p>
-
             </div>
 
-
-
-            <div className="border border-yellow-400 rounded-xl px-5 py-3 text-center">
-
-              <h3 className="text-2xl font-bold text-yellow-400">
-                3000+
+            <div>
+              <h3 className="text-4xl font-black text-yellow-400">
+                <CountUp end={3000} duration={3} />+
               </h3>
-
-              <p className="text-sm text-gray-300">
+              <p className="text-gray-400 mt-2">
                 Happy Clients
               </p>
-
             </div>
 
+            <div>
+              <h3 className="text-4xl font-black text-yellow-400">
+                <CountUp end={2018} duration={2} />
+              </h3>
+              <p className="text-gray-400 mt-2">
+                Since
+              </p>
+            </div>
 
           </div>
 
+          <div className="flex items-center gap-3 mt-10 text-gray-300">
 
-        </div>
+            <FaMapMarkerAlt className="text-yellow-400" />
 
-
-
-
-
-        <div className="bg-gradient-to-br from-gray-800 to-black rounded-3xl h-96 flex items-center justify-center border border-yellow-500 shadow-2xl">
-
-
-          <div className="text-center">
-
-
-            <div className="text-7xl mb-6">
-              🖨️
-            </div>
-
-
-            <h2 className="text-4xl font-bold text-yellow-400">
-              Ad Bazaar
-            </h2>
-
-
-            <p className="text-gray-300 mt-3 text-lg">
-              Printing • Branding • Designing
-            </p>
-
+            Lal Bangla, Kanpur
 
           </div>
 
+        </motion.div>
 
-        </div>
+        {/* RIGHT */}
 
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: .8 }}
+        >
+          <HeroSlider />
+        </motion.div>
 
       </div>
 
-
     </section>
-
   );
-
 }

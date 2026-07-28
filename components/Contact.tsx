@@ -1,78 +1,339 @@
 "use client";
 
 import { motion } from "framer-motion";
+
 import {
   FaMapMarkerAlt,
   FaPhoneAlt,
   FaEnvelope,
   FaClock,
+  FaWhatsapp,
 } from "react-icons/fa";
 
+
+const contactItems = [
+
+  {
+    icon: <FaMapMarkerAlt />,
+    title: "Address",
+    text: (
+      <>
+        65-A, Pardevanpurwa
+        <br />
+        Near Poonam Talkies
+        <br />
+        Lal Bangla, Kanpur
+      </>
+    ),
+  },
+
+
+  {
+    icon: <FaPhoneAlt />,
+    title: "Call Us",
+    text: (
+      <>
+        +91 9026283091
+        <br />
+        +91 7355470776
+      </>
+    ),
+  },
+
+
+  {
+    icon: <FaEnvelope />,
+    title: "Email",
+    text: (
+      <>
+        adbazar6@gmail.com
+      </>
+    ),
+  },
+
+
+  {
+    icon: <FaClock />,
+    title: "Business Hours",
+    text: (
+      <>
+        Monday - Sunday
+        <br />
+        10:00 AM - 9:00 PM
+      </>
+    ),
+  },
+
+];
+
+
+
 export default function Contact() {
-  return (
-    <section className="bg-black text-white py-24 px-6">
-      <div className="max-w-7xl mx-auto">
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <p className="text-yellow-400 uppercase tracking-widest font-semibold">
-            Contact Us
-          </p>
 
-          <h2 className="text-5xl font-bold mt-3">
-            Let's Build Your Brand
-          </h2>
+return (
 
-          <p className="text-gray-400 mt-5">
-            Get in touch with Ad Bazaar for premium printing,
-            signage and branding solutions.
-          </p>
-        </motion.div>
+<section
+id="contact"
+className="
+bg-[#080808]
+text-white
+py-24
+px-6
+"
+>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-          <div className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover:border-yellow-500 transition">
-            <FaMapMarkerAlt className="text-yellow-400 text-4xl mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Address</h3>
-            <p className="text-gray-400">
-              65-A, Pardevanpurwa<br />
-              Near Poonam Talkies<br />
-              Lal Bangla, Kanpur
-            </p>
-          </div>
+<div className="max-w-7xl mx-auto">
 
-          <div className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover:border-yellow-500 transition">
-            <FaPhoneAlt className="text-yellow-400 text-4xl mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Call Us</h3>
-            <p className="text-gray-400">
-              +91 9026283091<br />
-              +91 7355470776
-            </p>
-          </div>
 
-          <div className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover:border-yellow-500 transition">
-            <FaEnvelope className="text-yellow-400 text-4xl mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Email</h3>
-            <p className="text-gray-400">
-              adbazar6@gmail.com
-            </p>
-          </div>
 
-          <div className="bg-gray-900 rounded-2xl p-8 text-center border border-gray-800 hover:border-yellow-500 transition">
-            <FaClock className="text-yellow-400 text-4xl mx-auto mb-4" />
-            <h3 className="text-xl font-bold mb-3">Business Hours</h3>
-            <p className="text-gray-400">
-              Monday - Sunday<br />
-              10:00 AM – 9:00 PM
-            </p>
-          </div>
+<motion.div
 
-        </div>
-      </div>
-    </section>
-  );
+initial={{
+opacity:0,
+y:40
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:.6
+}}
+
+viewport={{
+once:true
+}}
+
+className="text-center mb-16"
+
+>
+
+
+<p className="
+text-yellow-400
+uppercase
+tracking-[5px]
+text-sm
+font-semibold
+">
+
+Contact Us
+
+</p>
+
+
+
+<h2 className="
+text-4xl
+md:text-5xl
+font-bold
+mt-4
+">
+
+Let's Build Your
+<span className="text-yellow-400">
+ Brand
+</span>
+
+</h2>
+
+
+
+<p className="
+text-gray-400
+max-w-2xl
+mx-auto
+mt-5
+">
+
+Get in touch with Ad Bazaar for premium printing,
+signage and branding solutions.
+
+</p>
+
+
+</motion.div>
+
+
+
+
+
+
+<div className="
+grid
+md:grid-cols-2
+lg:grid-cols-4
+gap-8
+">
+
+
+{
+contactItems.map((item,index)=>(
+
+
+<motion.div
+
+
+key={index}
+
+
+initial={{
+opacity:0,
+y:40
+}}
+
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+
+transition={{
+duration:.5,
+delay:index*.1
+}}
+
+
+viewport={{
+once:true
+}}
+
+
+
+whileHover={{
+y:-10
+}}
+
+
+
+className="
+bg-[#151515]
+border
+border-gray-800
+hover:border-yellow-400
+rounded-3xl
+p-8
+text-center
+transition-all
+duration-300
+hover:shadow-[0_0_30px_rgba(250,204,21,0.15)]
+"
+
+>
+
+
+<div className="
+w-16
+h-16
+mx-auto
+rounded-2xl
+bg-gradient-to-br
+from-yellow-300
+to-yellow-500
+text-black
+flex
+items-center
+justify-center
+text-3xl
+mb-5
+">
+
+{item.icon}
+
+</div>
+
+
+
+<h3 className="
+text-xl
+font-bold
+mb-3
+">
+
+{item.title}
+
+</h3>
+
+
+
+<p className="
+text-gray-400
+leading-7
+">
+
+{item.text}
+
+</p>
+
+
+
+</motion.div>
+
+
+))
+
+}
+
+
+</div>
+
+
+
+
+
+{/* CTA */}
+
+
+<div className="
+text-center
+mt-16
+">
+
+
+<a
+
+href="https://wa.me/919026283091"
+
+target="_blank"
+
+className="
+inline-flex
+items-center
+gap-3
+bg-green-500
+hover:bg-green-600
+px-8
+py-4
+rounded-full
+font-semibold
+transition
+hover:scale-105
+"
+
+>
+
+<FaWhatsapp className="text-2xl"/>
+
+Chat On WhatsApp
+
+</a>
+
+
+</div>
+
+
+
+
+</div>
+
+
+</section>
+
+);
+
 }
