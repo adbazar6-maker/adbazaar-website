@@ -1,134 +1,317 @@
-import AnimationWrapper from "./AnimationWrapper";
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  FaPhoneAlt,
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+
 
 export default function Contact() {
 
   return (
 
-    <section 
-      className="bg-black text-white py-20 px-6"
+    <section
       id="contact"
+      className="bg-[#0B0B0B] text-white py-24 px-6"
     >
 
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
 
-        <AnimationWrapper>
+        {/* Heading */}
 
-          <div className="text-center mb-12">
+        <motion.div
+          initial={{opacity:0,y:30}}
+          whileInView={{opacity:1,y:0}}
+          viewport={{once:true}}
+          className="text-center mb-16"
+        >
 
-            <h2 className="text-4xl md:text-5xl font-bold text-yellow-400">
-              Contact Ad Bazaar
-            </h2>
+          <p className="text-yellow-400 uppercase tracking-[4px] font-semibold">
+            Contact Us
+          </p>
 
-            <p className="text-gray-300 mt-4 text-lg">
-              Need Printing Solution? Contact Us Today
+
+          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+            Let's Start Your Project
+          </h2>
+
+
+          <p className="text-gray-400 mt-5">
+            Get premium printing solutions for your business.
+          </p>
+
+        </motion.div>
+
+
+
+
+        <div className="grid lg:grid-cols-2 gap-12">
+
+
+
+          {/* Left Information */}
+
+
+          <div>
+
+
+            <h3 className="text-3xl font-bold mb-6">
+              Ad Bazaar
+            </h3>
+
+
+            <p className="text-gray-400 leading-7 mb-8">
+              All Type of Printing Solution.
+              Digital Printing, Flex, ACP Sign Board,
+              Glow Sign, Wallpaper, Branding and complete
+              printing solutions in Kanpur.
             </p>
+
+
+
+            <div className="space-y-5">
+
+
+              <div className="flex items-center gap-4">
+
+                <div className="bg-yellow-400 text-black p-3 rounded-full">
+                  <FaPhoneAlt/>
+                </div>
+
+                <div>
+                  <p className="text-gray-400 text-sm">
+                    Call Us
+                  </p>
+
+                  <p className="font-semibold">
+                    +91 9026283091
+                  </p>
+                </div>
+
+              </div>
+
+
+
+              <div className="flex items-center gap-4">
+
+                <div className="bg-yellow-400 text-black p-3 rounded-full">
+                  <FaWhatsapp/>
+                </div>
+
+                <div>
+                  <p className="text-gray-400 text-sm">
+                    WhatsApp
+                  </p>
+
+                  <p className="font-semibold">
+                    +91 9026283091
+                  </p>
+                </div>
+
+              </div>
+
+
+
+              <div className="flex items-center gap-4">
+
+                <div className="bg-yellow-400 text-black p-3 rounded-full">
+                  <FaMapMarkerAlt/>
+                </div>
+
+                <div>
+                  <p className="text-gray-400 text-sm">
+                    Address
+                  </p>
+
+                  <p className="font-semibold">
+                    Lal Bangla, Kanpur
+                  </p>
+                </div>
+
+              </div>
+
+
+
+              <div className="flex items-center gap-4">
+
+                <div className="bg-yellow-400 text-black p-3 rounded-full">
+                  <FaEnvelope/>
+                </div>
+
+                <div>
+                  <p className="text-gray-400 text-sm">
+                    Email
+                  </p>
+
+                  <p className="font-semibold">
+                    adbazar6@gmail.com
+                  </p>
+                </div>
+
+              </div>
+
+
+            </div>
+
 
           </div>
 
-        </AnimationWrapper>
 
 
 
-        <div className="grid md:grid-cols-3 gap-8">
+
+          {/* Form */}
 
 
-          <AnimationWrapper>
+          <motion.div
 
-            <div className="border border-yellow-500 rounded-2xl p-8 text-center hover:bg-yellow-500 hover:text-black transition">
+            initial={{opacity:0,x:40}}
+            whileInView={{opacity:1,x:0}}
+            viewport={{once:true}}
 
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
-                Address
-              </h3>
+            className="
+            bg-[#151515]
+            border
+            border-gray-800
+            rounded-3xl
+            p-8
+            "
 
-              <p>
-                65-A, Pardevanpurwa,
-                <br />
-                Lal Bangla, Kanpur
-                <br />
-                Near Poonam Talkies
-              </p>
-
-            </div>
-
-          </AnimationWrapper>
+          >
 
 
-
-          <AnimationWrapper>
-
-            <div className="border border-yellow-500 rounded-2xl p-8 text-center hover:bg-yellow-500 hover:text-black transition">
-
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
-                Contact
-              </h3>
+            <h3 className="text-2xl font-bold mb-6">
+              Get Free Quote
+            </h3>
 
 
-              <a
-                href="tel:9026283091"
-                className="block mb-3"
+
+            <div className="space-y-5">
+
+
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="
+                w-full
+                bg-black
+                border
+                border-gray-700
+                rounded-xl
+                px-5
+                py-4
+                outline-none
+                focus:border-yellow-400
+                "
+              />
+
+
+
+              <input
+                type="tel"
+                placeholder="Mobile Number"
+                className="
+                w-full
+                bg-black
+                border
+                border-gray-700
+                rounded-xl
+                px-5
+                py-4
+                outline-none
+                focus:border-yellow-400
+                "
+              />
+
+
+
+              <select
+                className="
+                w-full
+                bg-black
+                border
+                border-gray-700
+                rounded-xl
+                px-5
+                py-4
+                outline-none
+                focus:border-yellow-400
+                "
               >
-                📞 +91 9026283091
-              </a>
+
+                <option>Select Service</option>
+                <option>Digital Printing</option>
+                <option>Flex Printing</option>
+                <option>ACP Sign Board</option>
+                <option>Glow Sign</option>
+                <option>Wedding Cards</option>
+                <option>Branding</option>
+
+              </select>
+
+
+
+              <textarea
+
+                rows={5}
+
+                placeholder="Your Message"
+
+                className="
+                w-full
+                bg-black
+                border
+                border-gray-700
+                rounded-xl
+                px-5
+                py-4
+                outline-none
+                focus:border-yellow-400
+                "
+
+              />
+
+
 
 
               <a
-                href="mailto:adbazar6@gmail.com"
-              >
-                ✉️ adbazar6@gmail.com
-              </a>
 
-
-            </div>
-
-          </AnimationWrapper>
-
-
-
-
-          <AnimationWrapper>
-
-            <div className="border border-yellow-500 rounded-2xl p-8 text-center hover:bg-yellow-500 hover:text-black transition">
-
-              <h3 className="text-2xl font-bold text-yellow-400 mb-4">
-                Business Hours
-              </h3>
-
-
-              <p>
-                Monday - Sunday
-                <br />
-                10:00 AM - 9:00 PM
-              </p>
-
-
-              <a
                 href="https://wa.me/919026283091"
+
                 target="_blank"
-                className="inline-block mt-5 bg-green-500 text-white px-6 py-2 rounded-full font-bold"
+
+                className="
+                flex
+                justify-center
+                items-center
+                gap-3
+                bg-yellow-400
+                text-black
+                font-bold
+                rounded-xl
+                py-4
+                hover:bg-yellow-300
+                transition
+                "
+
               >
-                WhatsApp Now
+
+                <FaWhatsapp/>
+                Send Enquiry on WhatsApp
+
               </a>
+
 
 
             </div>
 
-          </AnimationWrapper>
 
+          </motion.div>
 
-        </div>
-
-
-
-        <div className="mt-12 rounded-2xl overflow-hidden border border-yellow-500">
-
-          <iframe
-            src="https://www.google.com/maps?q=Ad%20Bazaar%20Kanpur&output=embed"
-            width="100%"
-            height="350"
-            loading="lazy"
-            className="border-0"
-          ></iframe>
 
         </div>
 
@@ -139,5 +322,4 @@ export default function Contact() {
     </section>
 
   );
-
 }

@@ -1,141 +1,76 @@
-import AnimationWrapper from "./AnimationWrapper";
-import {
-  Printer,
-  CreditCard,
-  Signpost,
-  Lightbulb,
-  Heart,
-  Building2
-} from "lucide-react";
+"use client";
 
+import { motion } from "framer-motion";
+import { FaStar, FaQuoteLeft } from "react-icons/fa";
 
-export default function Services() {
+const reviews = [
+  {
+    name: "Rajesh Kumar",
+    service: "Flex Printing",
+    review: "Excellent printing quality and fast service."
+  },
+  {
+    name: "Amit Sharma",
+    service: "ACP Sign Board",
+    review: "Professional work with premium finishing."
+  },
+  {
+    name: "Pooja Gupta",
+    service: "Wedding Cards",
+    review: "Beautiful designs and timely delivery."
+  }
+];
 
-
-  const services = [
-
-    {
-      title: "Digital Printing",
-      text: "High quality digital printing with sharp colors and premium finishing.",
-      icon: Printer
-    },
-
-    {
-      title: "Flex Printing",
-      text: "Large format flex printing for banners, events and promotions.",
-      icon: Signpost
-    },
-
-    {
-      title: "ACP Sign Board",
-      text: "Modern ACP signage solutions for shops and businesses.",
-      icon: Building2
-    },
-
-    {
-      title: "Glow Sign Board",
-      text: "Attractive LED glow sign boards to highlight your brand.",
-      icon: Lightbulb
-    },
-
-    {
-      title: "Visiting Cards",
-      text: "Premium visiting cards with elegant designs and finishing.",
-      icon: CreditCard
-    },
-
-    {
-      title: "Wedding Printing",
-      text: "Beautiful wedding cards and invitation printing.",
-      icon: Heart
-    }
-
-  ];
-
-
+export default function Reviews() {
   return (
+    <section className="bg-black text-white py-24 px-6">
 
-    <section className="bg-gray-100 py-20 px-6" id="services">
+      <div className="max-w-7xl mx-auto">
 
-
-      <div className="max-w-6xl mx-auto">
-
-
-        <AnimationWrapper>
-
-          <div className="text-center mb-12">
-
-            <h2 className="text-4xl md:text-5xl font-bold text-black">
-              Our Services
-            </h2>
-
-            <p className="text-gray-600 mt-4 text-lg">
-              Complete Printing & Branding Solutions Under One Roof
-            </p>
-
-          </div>
-
-        </AnimationWrapper>
-
-
+        <h2 className="text-4xl font-bold text-center text-yellow-400 mb-12">
+          What Our Clients Say
+        </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
 
+          {reviews.map((item, index) => (
 
-          {services.map((service,index)=>{
+            <motion.div
+              key={index}
+              whileHover={{ y: -10 }}
+              className="bg-[#151515] border border-gray-800 rounded-3xl p-8"
+            >
 
+              <FaQuoteLeft className="text-yellow-400 text-3xl mb-5" />
 
-            const Icon = service.icon;
+              <div className="flex text-yellow-400 mb-5">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+              </div>
 
+              <p className="text-gray-300">
+                "{item.review}"
+              </p>
 
-            return (
+              <h3 className="text-xl font-bold mt-6">
+                {item.name}
+              </h3>
 
-              <AnimationWrapper key={index}>
+              <p className="text-yellow-400 text-sm">
+                {item.service}
+              </p>
 
-                <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition duration-300 border-b-4 border-yellow-400 text-center">
+            </motion.div>
 
-
-                  <div className="flex justify-center mb-5">
-
-                    <div className="bg-black p-4 rounded-full">
-
-                      <Icon 
-                        size={35}
-                        className="text-yellow-400"
-                      />
-
-                    </div>
-
-                  </div>
-
-
-                  <h3 className="text-2xl font-bold text-black">
-                    {service.title}
-                  </h3>
-
-
-                  <p className="text-gray-600 mt-4">
-                    {service.text}
-                  </p>
-
-
-                </div>
-
-              </AnimationWrapper>
-
-            )
-
-          })}
-
+          ))}
 
         </div>
 
-
       </div>
 
-
     </section>
-
   );
-
 }

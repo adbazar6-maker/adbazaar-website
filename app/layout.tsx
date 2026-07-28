@@ -1,76 +1,54 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 
 export const metadata: Metadata = {
 
-  title:
-    "Ad Bazaar Kanpur | Digital Printing, Flex Printing & Branding Solutions",
-
+  title: "Ad Bazaar | All Type of Printing Solution in Kanpur",
 
   description:
-    "Ad Bazaar Kanpur provides Digital Printing, Flex Printing, ACP Sign Board, Glow Sign Board, Visiting Cards, Wedding Cards and complete advertising solutions.",
+    "Ad Bazaar Kanpur provides premium digital printing, flex printing, ACP sign board, glow sign board, wedding cards, branding and complete printing solutions.",
 
 
   keywords: [
-
     "Ad Bazaar Kanpur",
     "Digital Printing Kanpur",
     "Flex Printing Kanpur",
-    "ACP Sign Board Kanpur",
-    "Glow Sign Board Kanpur",
-    "LED Sign Board Kanpur",
-    "Visiting Card Printing Kanpur",
     "Wedding Card Printing Kanpur",
-    "Advertising Agency Kanpur",
-    "Printing Shop Lal Bangla Kanpur"
-
+    "ACP Sign Board Kanpur",
+    "Printing Shop Lal Bangla Kanpur",
+    "All Type Printing Solution"
   ],
 
 
   authors: [
     {
-      name: "Ad Bazaar Kanpur"
+      name: "Ad Bazaar"
     }
   ],
 
 
-  verification: {
+  creator: "Ad Bazaar",
 
-    google:
-      "v6Nr_6dRvadba76jCyANJhWPYTpC-vzBtnQsPNEDL2E",
 
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 
 
   openGraph: {
 
     title:
-      "Ad Bazaar Kanpur | All Type of Printing Solution",
-
+      "Ad Bazaar | Premium Printing Solutions Kanpur",
 
     description:
-      "Professional printing and branding solutions in Kanpur.",
-
+      "Professional printing services including digital printing, signage, branding and wedding printing solutions.",
 
     type: "website",
 
-
-    siteName:
-      "Ad Bazaar"
+    locale: "en_IN",
 
   },
 
@@ -78,7 +56,8 @@ export const metadata: Metadata = {
   robots: {
 
     index: true,
-    follow: true
+
+    follow: true,
 
   },
 
@@ -96,14 +75,11 @@ export default function RootLayout({
 
 }>) {
 
-
   return (
 
-    <html lang="en-IN">
+    <html lang="en">
 
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
 
         {children}
 
