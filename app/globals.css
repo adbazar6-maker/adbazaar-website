@@ -1,137 +1,178 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------- Theme ---------- */
 
-  --primary: #facc15;
-  --secondary: #111827;
-  --dark: #000000;
-  --light: #ffffff;
+:root{
+  --primary:#F5C542;
+  --primary-hover:#E8B923;
+
+  --bg:#0B0B0B;
+  --card:#161616;
+
+  --text:#FFFFFF;
+  --muted:#BDBDBD;
 }
 
-html {
-  scroll-behavior: smooth;
+/* ---------- Base ---------- */
+
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  overflow-x: hidden;
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow-x:hidden;
 }
 
-/* Scrollbar */
-
-::-webkit-scrollbar {
-  width: 8px;
+section{
+  position:relative;
+  padding:96px 24px;
 }
 
-::-webkit-scrollbar-track {
-  background: #111;
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #facc15;
-  border-radius: 20px;
+a{
+  text-decoration:none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #eab308;
+button{
+  cursor:pointer;
 }
 
-/* Selection */
+/* ---------- Container ---------- */
 
-::selection {
-  background: #facc15;
-  color: black;
+.container-custom{
+  max-width:1280px;
+  margin:auto;
 }
 
-/* Smooth Transition */
+/* ---------- Buttons ---------- */
 
-* {
-  transition: all .25s ease;
+.btn-primary{
+  background:var(--primary);
+  color:#000;
+  padding:14px 32px;
+  border-radius:9999px;
+  font-weight:700;
+  transition:.3s;
 }
 
-/* Image */
-
-img {
-  max-width: 100%;
-  height: auto;
+.btn-primary:hover{
+  background:var(--primary-hover);
+  transform:translateY(-3px);
 }
 
-/* Button Hover */
-
-button:hover {
-  cursor: pointer;
+.btn-secondary{
+  border:2px solid var(--primary);
+  color:var(--primary);
+  padding:14px 32px;
+  border-radius:9999px;
+  font-weight:700;
+  transition:.3s;
 }
 
-/* Animation */
+.btn-secondary:hover{
+  background:var(--primary);
+  color:#000;
+}
 
-@keyframes float {
+/* ---------- Headings ---------- */
 
-  0% {
-    transform: translateY(0px);
-  }
+.section-title{
+  font-size:clamp(2rem,5vw,3.5rem);
+  font-weight:800;
+}
 
-  50% {
-    transform: translateY(-10px);
-  }
+.section-subtitle{
+  color:var(--primary);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight:700;
+}
 
-  100% {
-    transform: translateY(0px);
-  }
+/* ---------- Cards ---------- */
+
+.card{
+  background:var(--card);
+  border-radius:24px;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:var(--primary);
+}
+
+/* ---------- Scrollbar ---------- */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+  background:var(--primary);
+  border-radius:20px;
+}
+
+/* ---------- Selection ---------- */
+
+::selection{
+  background:var(--primary);
+  color:#000;
+}
+
+/* ---------- Floating ---------- */
+
+@keyframes float{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-10px);}
+
+100%{transform:translateY(0);}
 
 }
 
-.float {
-  animation: float 3s ease-in-out infinite;
+.float{
+  animation:float 3s ease-in-out infinite;
 }
 
-/* Fade Up */
+/* ---------- Fade ---------- */
 
-@keyframes fadeUp {
+@keyframes fadeUp{
 
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
+from{
 
-  to {
-    opacity: 1;
-    transform: translateY(0px);
-  }
+opacity:0;
+transform:translateY(30px);
 
 }
 
-.fade-up {
-  animation: fadeUp .8s ease forwards;
+to{
+
+opacity:1;
+transform:translateY(0);
+
 }
 
-/* Shadow */
-
-.shadow-yellow {
-  box-shadow: 0px 0px 25px rgba(250,204,21,.35);
 }
 
-/* Gradient */
-
-.yellow-gradient {
-  background: linear-gradient(
-      135deg,
-      #facc15,
-      #eab308
-  );
+.fade-up{
+  animation:fadeUp .8s ease forwards;
 }
 
-/* Section */
+/* ---------- Shadow ---------- */
 
-section {
-  position: relative;
-}
-
-/* Link */
-
-a {
-  text-decoration: none;
+.shadow-gold{
+  box-shadow:0 0 30px rgba(245,197,66,.25);
 }
