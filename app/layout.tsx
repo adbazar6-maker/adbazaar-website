@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  
   title: "Ad Bazaar | All Type of Printing Solution in Kanpur",
-
+  
+  verification: {
+    google: "v6Nr_6dRvadba76jCyANJhWPYTpC-vzBtnQsPNEDL2E",
+  },
   description:
     "Ad Bazaar provides Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Wedding Cards, Visiting Cards, Branding and Complete Printing Solutions in Kanpur.",
 
