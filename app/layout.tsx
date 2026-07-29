@@ -31,7 +31,9 @@ export const metadata: Metadata = {
   publisher: "Ad Bazaar",
 
   // Domain live होने के बाद इसे enable करें
-  // metadataBase: new URL("https://adbazaar.in"),
+  metadataBase: new URL(
+  "https://adbazaar-website-d6vt-impuoivxu-adbazaar.vercel.app"
+),
 
   icons: {
     icon: "/logo.png",
