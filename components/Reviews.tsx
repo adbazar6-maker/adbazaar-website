@@ -42,7 +42,7 @@ export default function Reviews() {
           </h2>
 
           <p className="text-gray-400 mt-5">
-            Trusted by hundreds of happy customers in Kanpur.
+            Rated 5.0 ⭐ by our customers for quality printing, fast service and professional support.
           </p>
         </div>
 
@@ -69,7 +69,10 @@ export default function Reviews() {
 
               <h3 className="mt-6 font-bold text-xl">
                 {item.name}
-              </h3>
+              </h3><p className="text-sm text-gray-500 mt-2 flex items-center gap-2">
+  <FaGoogle className="text-yellow-400" />
+  Google Review
+</p>
             </motion.div>
           ))}
 

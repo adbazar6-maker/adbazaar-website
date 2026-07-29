@@ -87,6 +87,7 @@ px-6
 <div className="max-w-7xl mx-auto">
 
 
+{/* Heading */}
 
 <motion.div
 
@@ -112,7 +113,6 @@ className="text-center mb-16"
 
 >
 
-
 <p className="
 text-yellow-400
 uppercase
@@ -120,11 +120,8 @@ tracking-[5px]
 text-sm
 font-semibold
 ">
-
 Contact Us
-
 </p>
-
 
 
 <h2 className="
@@ -135,12 +132,12 @@ mt-4
 ">
 
 Let's Build Your
+
 <span className="text-yellow-400">
  Brand
 </span>
 
 </h2>
-
 
 
 <p className="
@@ -155,12 +152,12 @@ signage and branding solutions.
 
 </p>
 
-
 </motion.div>
 
 
 
 
+{/* Contact Cards */}
 
 
 <div className="
@@ -177,39 +174,30 @@ contactItems.map((item,index)=>(
 
 <motion.div
 
-
 key={index}
-
 
 initial={{
 opacity:0,
 y:40
 }}
 
-
 whileInView={{
 opacity:1,
 y:0
 }}
-
 
 transition={{
 duration:.5,
 delay:index*.1
 }}
 
-
 viewport={{
 once:true
 }}
 
-
-
 whileHover={{
 y:-10
 }}
-
-
 
 className="
 bg-[#151515]
@@ -221,7 +209,6 @@ p-8
 text-center
 transition-all
 duration-300
-hover:shadow-[0_0_30px_rgba(250,204,21,0.15)]
 "
 
 >
@@ -248,7 +235,6 @@ mb-5
 </div>
 
 
-
 <h3 className="
 text-xl
 font-bold
@@ -260,7 +246,6 @@ mb-3
 </h3>
 
 
-
 <p className="
 text-gray-400
 leading-7
@@ -269,7 +254,6 @@ leading-7
 {item.text}
 
 </p>
-
 
 
 </motion.div>
@@ -286,13 +270,195 @@ leading-7
 
 
 
-{/* CTA */}
+{/* Inquiry Form */}
+
+
+<motion.form
+
+action="https://formspree.io/f/meeydarn"
+
+method="POST"
+
+initial={{
+opacity:0,
+y:40
+}}
+
+whileInView={{
+opacity:1,
+y:0
+}}
+
+transition={{
+duration:.6
+}}
+
+viewport={{
+once:true
+}}
+
+className="
+max-w-3xl
+mx-auto
+mt-16
+"
+
+>
 
 
 <div className="
-text-center
-mt-16
+grid
+md:grid-cols-2
+gap-6
 ">
+
+
+<input
+
+type="text"
+
+name="name"
+
+placeholder="Your Name"
+
+required
+
+className="
+bg-[#151515]
+border
+border-gray-700
+rounded-xl
+p-4
+text-white
+outline-none
+focus:border-yellow-400
+"
+
+/>
+
+
+
+<input
+
+type="tel"
+
+name="phone"
+
+placeholder="Mobile Number"
+
+required
+
+className="
+bg-[#151515]
+border
+border-gray-700
+rounded-xl
+p-4
+text-white
+outline-none
+focus:border-yellow-400
+"
+
+/>
+
+
+</div>
+
+
+
+<input
+
+type="email"
+
+name="email"
+
+placeholder="Email Address"
+
+required
+
+className="
+w-full
+mt-6
+bg-[#151515]
+border
+border-gray-700
+rounded-xl
+p-4
+text-white
+outline-none
+focus:border-yellow-400
+"
+
+/>
+
+
+
+
+<textarea
+
+name="message"
+
+rows={5}
+
+placeholder="Tell us about your printing requirement..."
+
+required
+
+className="
+w-full
+mt-6
+bg-[#151515]
+border
+border-gray-700
+rounded-xl
+p-4
+text-white
+resize-none
+outline-none
+focus:border-yellow-400
+"
+
+/>
+
+
+
+
+<button
+
+type="submit"
+
+className="
+mt-8
+w-full
+bg-gradient-to-r
+from-yellow-300
+to-yellow-500
+text-black
+font-bold
+py-4
+rounded-xl
+hover:scale-[1.02]
+transition
+"
+
+>
+
+Send Inquiry
+
+</button>
+
+
+
+</motion.form>
+
+
+
+
+
+{/* WhatsApp Button */}
+
+
+<div className="text-center mt-12">
 
 
 <a
@@ -317,54 +483,6 @@ hover:scale-105
 
 >
 
-<form
-  action="https://formspree.io/f/meeydarn"
-  method="POST"
-  className="max-w-3xl mx-auto mt-16"
->
-  <div className="grid md:grid-cols-2 gap-6">
-
-    <input
-      type="text"
-      name="name"
-      placeholder="Your Name"
-      required
-      className="bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
-    />
-
-    <input
-      type="tel"
-      name="phone"
-      placeholder="Mobile Number"
-      required
-      className="bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
-    />
-
-  </div>
-
-  <input
-    type="email"
-    name="email"
-    placeholder="Email Address"
-    required
-    className="w-full mt-6 bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
-  />
-
-  <textarea
-    name="message"
-    rows={6}
-    placeholder="Tell us about your printing requirement..."
-    required
-    className="w-full mt-6 bg-[#151515] border border-gray-700 rounded-xl p-4 text-white resize-none focus:border-yellow-400 outline-none"
-  />
-
-  <button
-    type="submit"
-    className="mt-8 w-full bg-gradient-to-r from-yellow-300 to-yellow-500 text-black font-bold py-4 rounded-xl hover:scale-[1.02] transition"
-  >
-    Send Inquiry
-  </button>
-</form>
 <FaWhatsapp className="text-2xl"/>
 
 Chat On WhatsApp
@@ -376,11 +494,11 @@ Chat On WhatsApp
 
 
 
-
 </div>
 
 
 </section>
+
 
 );
 

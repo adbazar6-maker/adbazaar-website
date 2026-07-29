@@ -245,24 +245,28 @@ hover:shadow-yellow-500/20
 
 
 
-                <button
+                <a
 
-                className="
-                mt-6
-                flex items-center gap-3
-                text-yellow-400
-                font-semibold
-                group-hover:gap-5
-                transition-all
-                "
+href="https://wa.me/919026283091"
 
-                >
+target="_blank"
 
-                  Book Now →
+className="
+mt-6
+flex items-center gap-3
+text-yellow-400
+font-semibold
+group-hover:gap-5
+transition-all
+"
 
-                  <FaArrowRight />
+>
 
-                </button>
+Book Now
+
+<FaArrowRight />
+
+</a>
 
 
               </div>

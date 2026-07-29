@@ -24,7 +24,7 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-xl h-[550px] overflow-hidden rounded-3xl border border-yellow-500/30 shadow-2xl">
+    <div className="relative w-full max-w-xl h-[550px] overflow-hidden rounded-3xl border border-yellow-500/30 shadow-2xl group">
       <Image
         key={current}
         src={images[current]}
@@ -32,10 +32,10 @@ export default function HeroSlider() {
         fill
         priority
         sizes="(max-width:768px) 100vw, 600px"
-        className="object-cover transition-opacity duration-700"
+        className="object-cover transition-all duration-700 group-hover:scale-105"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
 
       <div className="absolute bottom-6 left-6">
         <h2 className="text-3xl font-bold text-white">
