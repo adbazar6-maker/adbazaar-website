@@ -18,53 +18,17 @@ export default function Hero() {
 
 
 return (
-
 <section
-
-className="
-relative
-min-h-screen
-flex
-items-center
-bg-[#080808]
-overflow-hidden
-"
-
+  className="
+    relative
+    min-h-screen
+    pt-24
+    flex
+    items-center
+    bg-[#080808]
+    overflow-hidden
+  "
 >
-
-
-{/* Background Effects */}
-
-<div className="
-absolute
-inset-0
-"
->
-
-<div className="
-absolute
-top-20
-left-10
-h-72
-w-72
-rounded-full
-bg-yellow-500/10
-blur-3xl
-"/>
-
-
-<div className="
-absolute
-bottom-10
-right-10
-h-96
-w-96
-rounded-full
-bg-yellow-400/10
-blur-3xl
-"/>
-
-</div>
 
 
 

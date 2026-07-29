@@ -24,28 +24,39 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-lg aspect-[4/5] rounded-3xl overflow-hidden border border-yellow-500/30 shadow-2xl">
-
+    <div className="relative w-full max-w-xl h-[550px] overflow-hidden rounded-3xl border border-yellow-500/30 shadow-2xl">
       <Image
+        key={current}
         src={images[current]}
-        alt="Ad Bazaar Portfolio"
+        alt="Ad Bazaar"
         fill
         priority
-        className="object-cover transition-all duration-700"
+        sizes="(max-width:768px) 100vw, 600px"
+        className="object-cover transition-opacity duration-700"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-      <div className="absolute bottom-0 left-0 right-0 p-6">
-        <h3 className="text-white text-2xl font-bold">
+      <div className="absolute bottom-6 left-6">
+        <h2 className="text-3xl font-bold text-white">
           Ad Bazaar
-        </h3>
+        </h2>
 
-        <p className="text-yellow-400 mt-1">
+        <p className="text-yellow-400 mt-2">
           Premium Printing & Branding Solutions
         </p>
       </div>
 
+      <div className="absolute bottom-6 right-6 flex gap-2">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`h-2 w-2 rounded-full ${
+              current === index ? "bg-yellow-400" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

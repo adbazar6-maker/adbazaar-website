@@ -151,8 +151,10 @@ export default function Services() {
 
               className="
               bg-[#151515]
-              border border-gray-800
-              hover:border-yellow-400
+border border-gray-800
+hover:border-yellow-400
+hover:shadow-2xl
+hover:shadow-yellow-500/20
               rounded-3xl
               overflow-hidden
               transition-all
@@ -170,20 +172,16 @@ export default function Services() {
 
 
                 <Image
-
-                  src={service.image}
-
-                  alt={service.title}
-
-                  fill
-
-                  className="
-                  object-cover
-                  group-hover:scale-110
-                  transition duration-500
-                  "
-
-                />
+  src={service.image}
+  alt={service.title}
+  fill
+  sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 25vw"
+  className="
+    object-cover
+    group-hover:scale-110
+    transition duration-500
+  "
+/>
 
 
                 <div className="
@@ -260,7 +258,7 @@ export default function Services() {
 
                 >
 
-                  Learn More
+                  Book Now →
 
                   <FaArrowRight />
 

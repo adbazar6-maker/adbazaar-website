@@ -1,77 +1,92 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaStar, FaQuoteLeft } from "react-icons/fa";
+import { FaStar, FaGoogle } from "react-icons/fa";
 
 const reviews = [
   {
-    name: "Rajesh Kumar",
-    service: "Flex Printing",
-    review: "Excellent printing quality and fast service."
+    name: "Dava India Generic Pharmacy",
+    review:
+      "Good quality, reasonable rates, great service. Ad Bazaar always delivers excellent printing work on time.",
+    rating: 5,
   },
   {
     name: "Amit Sharma",
-    service: "ACP Sign Board",
-    review: "Professional work with premium finishing."
+    review:
+      "Very professional team. High-quality flex printing and excellent customer support.",
+    rating: 5,
   },
   {
-    name: "Pooja Gupta",
-    service: "Wedding Cards",
-    review: "Beautiful designs and timely delivery."
-  }
+    name: "Priya Gupta",
+    review:
+      "Best printing shop in Kanpur. Fast delivery and premium quality printing.",
+    rating: 5,
+  },
 ];
 
 export default function Reviews() {
-
   return (
-    <section className="bg-black text-white py-20 px-6">
-
+    <section
+      id="reviews"
+      className="bg-[#080808] text-white py-24 px-6"
+    >
       <div className="max-w-7xl mx-auto">
 
-        <h2 className="text-4xl font-bold text-yellow-400 text-center mb-12">
-          What Our Clients Say
-        </h2>
+        <div className="text-center mb-16">
+          <p className="text-yellow-400 uppercase tracking-[5px] text-sm font-semibold">
+            Google Reviews
+          </p>
+
+          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+            What Our Customers Say
+          </h2>
+
+          <p className="text-gray-400 mt-5">
+            Trusted by hundreds of happy customers in Kanpur.
+          </p>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-8">
 
-          {reviews.map((item,index)=>(
-
+          {reviews.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{y:-10}}
-              className="bg-[#151515] border border-gray-800 rounded-3xl p-8"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.15 }}
+              viewport={{ once: true }}
+              className="bg-[#151515] rounded-3xl border border-gray-800 p-8 hover:border-yellow-400 transition"
             >
-
-              <FaQuoteLeft className="text-yellow-400 text-3xl mb-5"/>
-
-              <div className="flex text-yellow-400 mb-5">
-                <FaStar/>
-                <FaStar/>
-                <FaStar/>
-                <FaStar/>
-                <FaStar/>
+              <div className="flex gap-1 text-yellow-400 mb-4">
+                {[...Array(item.rating)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
               </div>
 
-              <p className="text-gray-300">
-                {item.review}
+              <p className="text-gray-300 leading-7">
+                "{item.review}"
               </p>
 
-              <h3 className="text-xl font-bold mt-6">
+              <h3 className="mt-6 font-bold text-xl">
                 {item.name}
               </h3>
-
-              <p className="text-yellow-400">
-                {item.service}
-              </p>
-
             </motion.div>
-
           ))}
 
         </div>
 
-      </div>
+        <div className="text-center mt-12">
+          <a
+            href="https://maps.app.goo.gl/ZeWVwhoA7Nf9e66Q9"
+            target="_blank"
+            className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:scale-105 transition"
+          >
+            <FaGoogle />
+            View All Google Reviews
+          </a>
+        </div>
 
+      </div>
     </section>
   );
 }

@@ -317,6 +317,54 @@ hover:scale-105
 
 >
 
+<form
+  action="https://formspree.io/f/meeydarn"
+  method="POST"
+  className="max-w-3xl mx-auto mt-16"
+>
+  <div className="grid md:grid-cols-2 gap-6">
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+      className="bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
+    />
+
+    <input
+      type="tel"
+      name="phone"
+      placeholder="Mobile Number"
+      required
+      className="bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
+    />
+
+  </div>
+
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    required
+    className="w-full mt-6 bg-[#151515] border border-gray-700 rounded-xl p-4 text-white focus:border-yellow-400 outline-none"
+  />
+
+  <textarea
+    name="message"
+    rows={6}
+    placeholder="Tell us about your printing requirement..."
+    required
+    className="w-full mt-6 bg-[#151515] border border-gray-700 rounded-xl p-4 text-white resize-none focus:border-yellow-400 outline-none"
+  />
+
+  <button
+    type="submit"
+    className="mt-8 w-full bg-gradient-to-r from-yellow-300 to-yellow-500 text-black font-bold py-4 rounded-xl hover:scale-[1.02] transition"
+  >
+    Send Inquiry
+  </button>
+</form>
 <FaWhatsapp className="text-2xl"/>
 
 Chat On WhatsApp
