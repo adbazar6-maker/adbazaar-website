@@ -17,9 +17,9 @@ import HeroSlider from "./HeroSlider";
 export default function Hero() {
 
 
-return (
-<section
-  className="
+  return (
+    <section
+      className="
     relative
     min-h-screen
     pt-24
@@ -28,13 +28,13 @@ return (
     bg-[#080808]
     overflow-hidden
   "
->
+    >
 
 
 
 
 
-<div className="
+      <div className="
 relative
 z-10
 max-w-7xl
@@ -51,30 +51,30 @@ items-center
 
 
 
-{/* Left Content */}
+        {/* Left Content */}
 
 
-<motion.div
+        <motion.div
 
-initial={{
-opacity:0,
-x:-50
-}}
+          initial={{
+            opacity: 0,
+            x: -50
+          }}
 
-animate={{
-opacity:1,
-x:0
-}}
+          animate={{
+            opacity: 1,
+            x: 0
+          }}
 
-transition={{
-duration:.8
-}}
+          transition={{
+            duration: .8
+          }}
 
->
+        >
 
 
 
-<div className="
+          <div className="
 inline-flex
 items-center
 gap-2
@@ -90,16 +90,16 @@ font-semibold
 mb-6
 ">
 
-★ Premium Printing Solutions
+            ★ Premium Printing Solutions
 
-</div>
-
-
+          </div>
 
 
 
 
-<h1 className="
+
+
+          <h1 className="
 text-5xl
 md:text-7xl
 font-extrabold
@@ -108,28 +108,28 @@ text-white
 ">
 
 
-Build Your Brand With
+            Build Your Brand With
 
 
-<span className="
+            <span className="
 text-yellow-400
 block
 ">
 
-Ad Bazaar
+              Ad Bazaar
 
-</span>
-
-
-</h1>
+            </span>
 
 
+          </h1>
 
 
 
 
 
-<h2 className="
+
+
+          <h2 className="
 text-2xl
 md:text-3xl
 text-gray-200
@@ -137,17 +137,17 @@ font-semibold
 mt-6
 ">
 
-Complete Printing & Branding Partner
+            Complete Printing & Branding Partner
 
-</h2>
-
-
+          </h2>
 
 
 
 
 
-<p className="
+
+
+          <p className="
 text-gray-400
 mt-6
 text-lg
@@ -155,22 +155,22 @@ leading-8
 max-w-xl
 ">
 
-Digital Printing, Flex Printing, ACP Sign Boards,
-Glow Sign, Wedding Cards, Business Branding
-and complete advertising solutions in Kanpur.
+            Digital Printing, Flex Printing, ACP Sign Boards,
+            Glow Sign, Wedding Cards, Business Branding
+            and complete advertising solutions in Kanpur.
 
-</p>
-
-
+          </p>
 
 
 
 
 
-{/* Buttons */}
 
 
-<div className="
+          {/* Buttons */}
+
+
+          <div className="
 flex
 flex-wrap
 gap-4
@@ -178,11 +178,11 @@ mt-10
 ">
 
 
-<a
+            <a
 
-href="tel:+919026283091"
+              href="tel:+919026283091"
 
-className="
+              className="
 flex
 items-center
 gap-2
@@ -198,25 +198,25 @@ hover:scale-105
 transition
 "
 
->
+            >
 
-<FaPhoneAlt/>
+              <FaPhoneAlt />
 
-Call Now
+              Call Now
 
-</a>
-
-
+            </a>
 
 
 
-<a
 
-href="https://wa.me/919026283091"
 
-target="_blank"
+            <a
 
-className="
+              href="https://wa.me/919026283091"
+
+              target="_blank"
+
+              className="
 flex
 items-center
 gap-2
@@ -232,23 +232,23 @@ hover:text-white
 transition
 "
 
->
+            >
 
-<FaWhatsapp/>
+              <FaWhatsapp />
 
-WhatsApp
+              WhatsApp
 
-</a>
-
-
+            </a>
 
 
 
-<a
 
-href="#contact"
 
-className="
+            <a
+
+              href="#contact"
+
+              className="
 flex
 items-center
 gap-2
@@ -256,28 +256,28 @@ text-yellow-400
 font-semibold
 "
 
->
+            >
 
-Get Free Quote
+              Get Free Quote
 
-<FaArrowRight/>
+              <FaArrowRight />
 
-</a>
-
-
-</div>
+            </a>
 
 
+          </div>
 
 
 
 
 
 
-{/* Trust Points */}
 
 
-<div className="
+          {/* Trust Points */}
+
+
+          <div className="
 grid
 sm:grid-cols-2
 gap-4
@@ -287,123 +287,89 @@ text-gray-300
 ">
 
 
-<span className="
+            <span className="
 flex
 items-center
 gap-2
 ">
 
-<FaCheckCircle className="text-yellow-400"/>
+              <FaCheckCircle className="text-yellow-400" />
 
-Premium Quality
+              Premium Quality
 
-</span>
-
-
+            </span>
 
 
-<span className="
+
+
+            <span className="
 flex
 items-center
 gap-2
 ">
 
-<FaCheckCircle className="text-yellow-400"/>
+              <FaCheckCircle className="text-yellow-400" />
 
-Fast Delivery
+              Fast Delivery
 
-</span>
-
-
+            </span>
 
 
 
-<span className="
+
+
+            <span className="
 flex
 items-center
 gap-2
 ">
 
-<FaStar className="text-yellow-400"/>
+              <FaStar className="text-yellow-400" />
 
-5000+ Projects
+              5000+ Projects
 
-</span>
-
-
+            </span>
 
 
 
-<span className="
+
+
+            <span className="
 flex
 items-center
 gap-2
 ">
 
-<FaMapMarkerAlt className="text-yellow-400"/>
+              <FaMapMarkerAlt className="text-yellow-400" />
 
-Lal Bangla, Kanpur
+              Lal Bangla, Kanpur
 
-</span>
+            </span>
 
 
+          </div>
+
+
+
+          {/* Slider */}
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 50
+            }}
+            animate={{
+              opacity: 1,
+              x: 0
+            }}
+            transition={{
+              duration: 0.8
+            }}
+            className="
+    flex
+    justify-center
+  "
+          >
+            <div className="w-full">
+  <HeroSlider />
 </div>
-
-
-
-</motion.div>
-
-
-
-
-
-
-
-
-
-{/* Slider */}
-
-
-<motion.div
-
-initial={{
-opacity:0,
-x:50
-}}
-
-animate={{
-opacity:1,
-x:0
-}}
-
-transition={{
-duration:.8
-}}
-
-className="
-flex
-justify-center
-"
-
->
-
-<div className="w-full h-[550px] rounded-3xl bg-yellow-400 flex items-center justify-center">
-  <h2 className="text-4xl font-bold text-black">
-    Hero Slider Test
-  </h2>
-</div>
-
-</motion.div>
-
-
-
-
-
-</div>
-
-
-</section>
-
-);
-
-}
