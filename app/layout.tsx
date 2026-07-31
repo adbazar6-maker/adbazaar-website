@@ -1,3 +1,6 @@
+import type { Metadata } from "next";
+import "./globals.css";
+import LocalBusinessSchema from "@/components/LocalBusinessSchema";
 export const metadata: Metadata = {
   title: {
     default: "Ad Bazaar Kanpur | Digital Printing & All Type Printing Solution",
@@ -18,23 +21,7 @@ export const metadata: Metadata = {
     "Ad Bazaar Kanpur",
   ],
 
-  description:
-    "Ad Bazaar provides Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Wedding Cards, Visiting Cards, Branding and Complete Printing Solutions in Kanpur.",
-
-  keywords: [
-    "Ad Bazaar Kanpur",
-    "Digital Printing Kanpur",
-    "Flex Printing Kanpur",
-    "ACP Sign Board Kanpur",
-    "Glow Sign Board Kanpur",
-    "Wedding Card Printing Kanpur",
-    "Visiting Card Printing Kanpur",
-    "Printing Shop Kanpur",
-    "Printing Shop Lal Bangla",
-    "Branding Solutions Kanpur",
-  ],
-
-  authors: [
+    authors: [
     {
       name: "Ad Bazaar",
     },
