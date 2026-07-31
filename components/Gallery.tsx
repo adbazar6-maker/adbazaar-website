@@ -2,346 +2,180 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Lightbox from "./Lightbox";
+
+const categories = [
+  "All",
+  "Our Store",
+  "Workspace",
+  "Visiting Cards",
+  "ACP Sign Board",
+];
 
 const galleryItems = [
   {
-    title: "Digital Printing Work",
-    image: "/gallery/IMG_20260509_204653.jpg",
-    category: "Digital Printing",
+    title: "Ad Bazaar Shop",
+    image: "/gallery/portfolio/shop-front.jpeg",
+    category: "Our Store",
   },
-
   {
-    title: "Branding Work",
-    image: "/gallery/IMG_20260509_204659.jpg",
-    category: "Business Branding",
+    title: "Shop Interior",
+    image: "/gallery/portfolio/shop-interior.jpeg",
+    category: "Workspace",
   },
-
   {
-    title: "Sign Board Work",
-    image: "/gallery/IMG_20260509_204701.jpg",
-    category: "Signage Solutions",
+    title: "Visiting Card Front",
+    image: "/gallery/portfolio/visiting-card-front.jpeg",
+    category: "Visiting Cards",
   },
-
   {
-    title: "Flex Printing",
-    image: "/gallery/IMG_20260520_182632.jpg",
-    category: "Outdoor Printing",
+    title: "Visiting Card Back",
+    image: "/gallery/portfolio/visiting-card-back.jpeg",
+    category: "Visiting Cards",
   },
-
   {
-    title: "Interior Branding",
-    image: "/gallery/IMG_20260528_213659.jpg",
-    category: "Interior Work",
-  },
-
-  {
-    title: "Creative Printing",
-    image: "/gallery/IMG_20260528_213712.jpg",
-    category: "Custom Printing",
-  },
-
-  {
-    title: "Ad Bazaar Projects",
-    image: "/gallery/1181d4c3-5fcf-4352-922e-b6fcb9953dff.jpg",
-    category: "Latest Work",
-  },
-
-  {
-    title: "Printing Solutions",
-    image: "/gallery/ad8e2f8b-91e6-46e1-8813-24053058799c.jpg",
-    category: "All Type Printing",
+    title: "Dr. Guddu ACP Board",
+    image: "/gallery/portfolio/dr-guddu-acp-board.jpeg",
+    category: "ACP Sign Board",
   },
 ];
 
-
 export default function Gallery() {
-
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const filteredItems = useMemo(() => {
+    if (selectedCategory === "All") return galleryItems;
 
-  const openLightbox = (index:number) => {
+    return galleryItems.filter(
+      (item) => item.category === selectedCategory
+    );
+  }, [selectedCategory]);
+
+  const openLightbox = (index: number) => {
     setCurrentIndex(index);
     setIsOpen(true);
   };
 
+  const closeLightbox = () => setIsOpen(false);
 
-  const closeLightbox = () => {
-    setIsOpen(false);
-  };
+  const nextImage = () =>
+    setCurrentIndex((prev) => (prev + 1) % filteredItems.length);
 
-
-  const nextImage = () => {
+  const prevImage = () =>
     setCurrentIndex(
-      (prev) => (prev + 1) % galleryItems.length
+      (prev) => (prev - 1 + filteredItems.length) % filteredItems.length
     );
-  };
-
-
-  const prevImage = () => {
-    setCurrentIndex(
-      (prev) =>
-      (prev - 1 + galleryItems.length) % galleryItems.length
-    );
-  };
-
 
   return (
-
     <section
       id="gallery"
       className="bg-[#080808] text-white py-24 px-6"
     >
-
       <div className="max-w-7xl mx-auto">
 
-
-        {/* Heading */}
-
         <motion.div
-
-          initial={{
-            opacity:0,
-            y:40
-          }}
-
-          whileInView={{
-            opacity:1,
-            y:0
-          }}
-
-          transition={{
-            duration:.6
-          }}
-
-          viewport={{
-            once:true
-          }}
-
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
-
         >
-
-          <p className="
-          text-yellow-400
-          uppercase
-          tracking-[5px]
-          text-sm
-          font-semibold
-          ">
+          <p className="text-yellow-400 uppercase tracking-[5px] text-sm font-semibold">
             Our Portfolio
           </p>
 
-
-          <h2 className="
-          text-4xl
-          md:text-5xl
-          font-bold
-          mt-4
-          ">
-            Creative 
-            <span className="text-yellow-400">
-              Gallery
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold mt-4">
+            Creative <span className="text-yellow-400">Gallery</span>
           </h2>
 
-
-          <p className="
-          text-gray-400
-          max-w-2xl
-          mx-auto
-          mt-5
-          leading-7
-          ">
-            Explore our latest printing projects including
-            digital printing, signage, branding and customized solutions.
+          <p className="text-gray-400 max-w-2xl mx-auto mt-5 leading-7">
+            Explore our real printing work, branding projects,
+            ACP sign boards and premium print solutions.
           </p>
-
-
         </motion.div>
 
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-5 py-2 rounded-full transition-all duration-300 ${
+                selectedCategory === category
+                  ? "bg-yellow-400 text-black font-semibold"
+                  : "bg-[#151515] hover:bg-yellow-400 hover:text-black"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
 
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredItems.map((item, index) => (
+            <motion.div
+              key={item.image}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8 }}
+              onClick={() => openLightbox(index)}
+              className="group relative overflow-hidden rounded-3xl cursor-pointer border border-gray-800 bg-[#151515] hover:border-yellow-400 transition-all"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
 
-        {/* Gallery Grid */}
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  quality={100}
+                  className="object-cover transition duration-700 group-hover:scale-110"
+                />
 
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
-        <div className="
-        grid
-        grid-cols-1
-        sm:grid-cols-2
-        lg:grid-cols-4
-        gap-8
-        ">
-
-
-          {
-            galleryItems.map((item,index)=>(
-
-
-              <motion.div
-
-                key={index}
-
-                initial={{
-                  opacity:0,
-                  scale:.9
-                }}
-
-                whileInView={{
-                  opacity:1,
-                  scale:1
-                }}
-
-                transition={{
-                  duration:.5,
-                  delay:index*0.08
-                }}
-
-                viewport={{
-                  once:true
-                }}
-
-
-                whileHover={{
-                  y:-10
-                }}
-
-
-                onClick={() => openLightbox(index)}
-
-
-                className="
-                group
-                cursor-pointer
-                relative
-                overflow-hidden
-                rounded-3xl
-                border
-                border-gray-800
-                bg-[#151515]
-                hover:border-yellow-400
-                hover:shadow-2xl
-                hover:shadow-yellow-500/20
-                transition
-                duration-300
-                "
-
-              >
-
-
-                <div className="
-                relative
-                h-72
-                w-full
-                overflow-hidden
-                ">
-
-
-                  <Image
-
-                    src={item.image}
-
-                    alt={item.title}
-
-                    fill
-
-                    sizes="
-                    (max-width:768px) 100vw,
-                    (max-width:1200px) 50vw,
-                    25vw
-                    "
-
-                    className="
-                    object-cover
-                    group-hover:scale-110
-                    transition
-                    duration-700
-                    "
-
-                  />
-
-
-
-                  <div className="
-                  absolute
-                  inset-0
-                  bg-gradient-to-t
-                  from-black
-                  via-black/30
-                  to-transparent
-                  " />
-
-
-
-                  <div className="
-                  absolute
-                  bottom-0
-                  left-0
-                  right-0
-                  p-6
-                  ">
-
-
-                    <h3 className="
-                    text-xl
-                    font-bold
-                    ">
-                      {item.title}
-                    </h3>
-
-
-                    <p className="
-                    text-yellow-400
-                    text-sm
-                    mt-2
-                    ">
-                      {item.category}
-                    </p>
-
-
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300">
+                  <div className="bg-yellow-400 text-black px-5 py-2 rounded-full font-semibold">
+                    🔍 Click to View
                   </div>
+                </div>
 
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl font-bold">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-yellow-400 text-sm mt-2">
+                    {item.category}
+                  </p>
+
+                  <div className="mt-4">
+                    <button className="bg-yellow-400 text-black px-4 py-2 rounded-full font-semibold text-sm hover:bg-white transition-all duration-300">
+                      View Project →
+                    </button>
+                  </div>
 
                 </div>
 
+              </div>
 
-              </motion.div>
-
-
-            ))
-          }
-
-
+            </motion.div>
+          ))}
         </div>
-
-
 
       </div>
 
-
-
-      {/* Lightbox */}
-
       <Lightbox
-
-        images={galleryItems}
-
+        images={filteredItems}
         currentIndex={currentIndex}
-
         isOpen={isOpen}
-
         onClose={closeLightbox}
-
         onNext={nextImage}
-
         onPrev={prevImage}
-
       />
-
-
     </section>
-
   );
 }

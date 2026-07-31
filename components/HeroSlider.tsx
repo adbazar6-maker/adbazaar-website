@@ -26,7 +26,7 @@ export default function HeroSlider() {
   return (
     <div className="relative w-full max-w-xl h-[550px] overflow-hidden rounded-3xl border border-yellow-500/30 shadow-2xl group">
       <Image
-        key={current}
+        
         src={images[current]}
         alt="Ad Bazaar"
         fill

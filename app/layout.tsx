@@ -1,13 +1,23 @@
-import type { Metadata } from "next";
-import "./globals.css";
-
 export const metadata: Metadata = {
-  
-  title: "Ad Bazaar | All Type of Printing Solution in Kanpur",
-  
-  verification: {
-    google: "v6Nr_6dRvadba76jCyANJhWPYTpC-vzBtnQsPNEDL2E",
+  title: {
+    default: "Ad Bazaar Kanpur | Digital Printing & All Type Printing Solution",
+    template: "%s | Ad Bazaar Kanpur",
   },
+
+  description:
+    "Ad Bazaar Kanpur provides all type of printing solutions including Digital Printing, Flex Printing, Banner Printing, Visiting Card, Wedding Card, Vinyl Printing and more.",
+
+  keywords: [
+    "Digital Printing Service in Kanpur",
+    "Printing Shop in Kanpur",
+    "Flex Printing Kanpur",
+    "Banner Printing Kanpur",
+    "Visiting Card Printing Kanpur",
+    "Wedding Card Printing Kanpur",
+    "Vinyl Printing Kanpur",
+    "Ad Bazaar Kanpur",
+  ],
+
   description:
     "Ad Bazaar provides Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Wedding Cards, Visiting Cards, Branding and Complete Printing Solutions in Kanpur.",
 
@@ -34,10 +44,13 @@ export const metadata: Metadata = {
 
   publisher: "Ad Bazaar",
 
-  // Domain live होने के बाद इसे enable करें
   metadataBase: new URL(
-  "https://adbazaar-website-d6vt-impuoivxu-adbazaar.vercel.app"
-),
+    "https://adbazaar-website.vercel.app"
+  ),
+
+  verification: {
+    google: "v6Nr_6dRvadba76jCyANJhWPYTpC-vzBtnQsPNEDL2E",
+  },
 
   icons: {
     icon: "/logo.png",
@@ -49,13 +62,15 @@ export const metadata: Metadata = {
     title: "Ad Bazaar | Premium Printing Solutions Kanpur",
 
     description:
-      "Professional Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Wedding Cards and Branding Solutions in Kanpur.",
+      "Professional Digital Printing, Flex Printing, ACP Sign Boards, Glow Sign Boards, Wedding Cards, Visiting Cards, Banner Printing and Branding Solutions in Kanpur.",
 
-    type: "website",
+    url: "https://adbazaar-website.vercel.app",
+
+    siteName: "Ad Bazaar",
 
     locale: "en_IN",
 
-    siteName: "Ad Bazaar",
+    type: "website",
 
     images: [
       {
@@ -73,7 +88,7 @@ export const metadata: Metadata = {
     title: "Ad Bazaar | Premium Printing Solutions",
 
     description:
-      "Digital Printing, Flex Printing, ACP Sign Boards, Wedding Cards & Branding Solutions.",
+      "Digital Printing, Flex Printing, ACP Sign Boards, Wedding Cards, Visiting Cards & Branding Solutions.",
 
     images: ["/logo.png"],
   },
@@ -81,7 +96,19 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+      "max-snippet": -1,
+    },
   },
+
+  themeColor: "#facc15",
+
+  category: "Business",
 };
 
 export default function RootLayout({
@@ -90,8 +117,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en-IN">
+      <body>
+         <LocalBusinessSchema />
+        {children}
+      </body>
     </html>
   );
 }

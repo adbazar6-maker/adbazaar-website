@@ -1,6 +1,5 @@
 "use client";
 
-<section id="home"></section>
 import { motion } from "framer-motion";
 
 import {
@@ -388,7 +387,11 @@ justify-center
 
 >
 
-<HeroSlider />
+<div className="w-full h-[550px] rounded-3xl bg-yellow-400 flex items-center justify-center">
+  <h2 className="text-4xl font-bold text-black">
+    Hero Slider Test
+  </h2>
+</div>
 
 </motion.div>
 
