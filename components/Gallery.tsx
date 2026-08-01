@@ -128,12 +128,14 @@ export default function Gallery() {
               <div className="relative aspect-[4/3] overflow-hidden">
 
                 <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  quality={100}
-                  className="object-cover transition duration-700 group-hover:scale-110"
-                />
+  src={item.image}
+  alt={item.title}
+  width={800}
+  height={600}
+  quality={100}
+  unoptimized
+  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+/>
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
