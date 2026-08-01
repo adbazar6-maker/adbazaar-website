@@ -371,5 +371,7 @@ gap-2
   "
           >
             <div className="w-full">
+  <h1 className="text-red-500 text-5xl">TEST 12345</h1>
+<HeroSlider />
   <HeroSlider />
 </div>
