@@ -130,11 +130,9 @@ export default function Gallery() {
                 <Image
   src={item.image}
   alt={item.title}
-  width={800}
-  height={600}
-  quality={100}
+  fill
   unoptimized
-  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
+  className="object-cover transition duration-700 group-hover:scale-110"
 />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
