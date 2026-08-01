@@ -24,38 +24,10 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-xl h-[550px] overflow-hidden rounded-3xl border border-yellow-500/30 shadow-2xl group">
-      <Image
-  src="/gallery/IMG_20260509_204653.jpg"
-  alt="Ad Bazaar"
-  fill
-  priority
-  sizes="100vw"
-  className="object-cover"
-/>
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-      <div className="absolute bottom-6 left-6">
-        <h2 className="text-3xl font-bold text-white">
-          Ad Bazaar
-        </h2>
-
-        <p className="text-yellow-400 mt-2">
-          Premium Printing & Branding Solutions
-        </p>
-      </div>
-
-      <div className="absolute bottom-6 right-6 flex gap-2">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`h-2 w-2 rounded-full ${
-              current === index ? "bg-yellow-400" : "bg-white/50"
-            }`}
-          />
-        ))}
-      </div>
+    <div className="w-full h-[550px] bg-red-500 rounded-3xl flex items-center justify-center">
+      <h1 className="text-5xl font-bold text-white">
+        HERO SLIDER WORKING
+      </h1>
     </div>
   );
 }
