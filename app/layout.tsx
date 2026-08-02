@@ -1,3 +1,4 @@
+import Script from "next/script";
 import type { Metadata } from "next";
 import "./globals.css";
 import LocalBusinessSchema from "@/components/LocalBusinessSchema";
@@ -94,8 +95,7 @@ export const metadata: Metadata = {
   },
 
  
-  themeColor: "#111827",
-  category: "Business",
+   category: "Business",
 };
 
 export default function RootLayout({
@@ -105,6 +105,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-IN">
+      <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-XZ50HG3PFM"
+  strategy="afterInteractive"
+/>
+
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XZ50HG3PFM');
+  `}
+</Script>
       <body>
          <LocalBusinessSchema />
         {children}
