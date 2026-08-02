@@ -93,8 +93,8 @@ export const metadata: Metadata = {
     },
   },
 
-  themeColor: "#facc15",
-
+ 
+  themeColor: "#111827",
   category: "Business",
 };
 
