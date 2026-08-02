@@ -27,7 +27,7 @@ const galleryItems = [
   },
 
   {
-    title: "Visiting Card",
+    title: "Visiting Card front",
     image: "/gallery/portfolio/visiting-Card-Front.jpg"
     category: "Visiting Cards",
   },
